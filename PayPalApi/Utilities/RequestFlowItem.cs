@@ -46,7 +46,7 @@ namespace PayPalApi.Utilities
                 this.Response = Common.FormatJsonString(((ConnectionException)ex).Response);
                 if (string.IsNullOrEmpty(ex.Message))
                 {
-                    this.RecordError(string.Format("Error thrown from SDK as type {0}.", ex.GetType().ToString));
+                    this.RecordError(string.Format("Error thrown from SDK as type {0}.", ex.GetType().ToString()));
                 }
                 else
                 {
@@ -55,12 +55,17 @@ namespace PayPalApi.Utilities
             }
             else if (ex is PayPalException && ex.InnerException != null)
             {
-                this.RecordError(ex.InnerException);
+                this.RecordError(ex.InnerException.Message);
             }
             else
             {
                 this.RecordError(ex.Message);
             }
+        }
+
+        public void RecordSuccess(string message)
+        {
+            this.RecordMessage(message, RequestFlowItemMessageType.Success);
         }
 
         public void RecordError(string message)
