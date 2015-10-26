@@ -67,6 +67,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a href="History.aspx">Transaction History</a>
+                            </h4>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-xs-9 col-md-9">
