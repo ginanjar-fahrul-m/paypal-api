@@ -10,6 +10,6 @@
 namespace PayPalApi {
     
     
-    public partial class Transaction {
+    public partial class History {
     }
 }

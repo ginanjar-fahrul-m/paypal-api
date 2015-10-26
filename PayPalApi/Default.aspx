@@ -98,7 +98,7 @@
                                 $50
                             </label>
                         </div>
-                        <a class="btn btn-primary" href="Transaction.aspx" role="button">Pay</a>
+                        <a class="btn btn-primary" href="History.aspx" role="button">Pay</a>
                     </div>
                     <div class="tab-pane fade" id="cash">
                         <br />
