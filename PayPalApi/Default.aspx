@@ -87,25 +87,27 @@
                 <div class="tab-content">
                     <div class="active tab-pane fade in" id="paypal">
                         <br />
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-                                $10
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                $30
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option3">
-                                $50
-                            </label>
-                        </div>
-                        <a class="btn btn-primary" href="History.aspx" role="button">Pay</a>
+                        <form runat="server">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                    $10
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    $30
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                    $50
+                                </label>
+                            </div>
+                            <asp:Button CssClass="btn btn-primary" ID="Pay" runat="server" Text="Pay" OnClick="Pay_Click" />
+                        </form>
                     </div>
                     <div class="tab-pane fade" id="cash">
                         <br />
