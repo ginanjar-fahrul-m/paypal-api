@@ -19,7 +19,27 @@ namespace PayPalApi
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            string payerId = Request.Params["PayerId"];
+            if (!string.IsNullOrEmpty(payerId))
+            {
+                ExecutePayment(payerId);
+            }
+        }
+
+        protected void ExecutePayment(string payerId)
+        {
+            var paymentId = Request.Params["paymentId"];
+            var paymentExecution = new PaymentExecution()
+            {
+                payer_id = payerId
+            };
+
+            var payment = new Payment()
+            {
+                id = paymentId
+            };
+
+            var executedPayment = payment.Execute(apiContext, paymentExecution);
         }
 
         protected void Pay_Click(object sender, EventArgs e)
@@ -89,7 +109,15 @@ namespace PayPalApi
 
                 var createdPayment = payment.Create(apiContext);
 
-                Session.Add(guid, createdPayment.id);
+                var links = createdPayment.links.GetEnumerator();
+                while (links.MoveNext())
+                {
+                    var link = links.Current;
+                    if (link.rel.ToLower().Trim().Equals("approval_url"))
+                    {
+                        Response.Redirect(link.href);
+                    }
+                }
             }
         }
     }
