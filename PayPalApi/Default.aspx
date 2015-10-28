@@ -80,25 +80,17 @@
                 <div class="tab-content">
                     <div class="active tab-pane fade in" id="paypal">
                         <br />
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-                                $10
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                $30
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option3">
-                                $50
-                            </label>
-                        </div>
-                        <a class="btn btn-primary" href="History.aspx" role="button">Pay</a>
+                        <form id="form1" runat="server">
+                            <div>                           
+                                <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                                    <asp:ListItem Text=" $10" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text=" $30" Value="30"></asp:ListItem>
+                                    <asp:ListItem Text=" $50" Value="50"></asp:ListItem>
+                                </asp:RadioButtonList>
+                                <br />
+                                <asp:Button CssClass="btn btn-primary" ID="Pay" runat="server" Text="Pay" OnClick="Pay_Click" />                
+                            </div>
+                        </form>
                     </div>
                     <div class="tab-pane fade" id="cash">
                         <br />
@@ -110,7 +102,7 @@
             </div>
         </div>
     </div>
-    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
