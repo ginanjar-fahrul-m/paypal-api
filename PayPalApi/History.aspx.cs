@@ -46,7 +46,7 @@ namespace PayPalApi
                 };
                 if (sale != null) {
                     var response = sale.Refund(apiContext, refund);
-                    message = "Refund transaction for invoice number " + invoiceNum + " success";
+                    message = GetGlobalResourceObject("Resources", "msg3") + " " + invoiceNum + " " + GetGlobalResourceObject("Resources", "msg2");
                 }
             }
         }
