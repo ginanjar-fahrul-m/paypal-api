@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="PayPalApi.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:DropDownList ID="ddlLanguages" runat="server" AutoPostBack="true">
+        <asp:ListItem Text="English" Value="en-us" />
+        <asp:ListItem Text="Bahasa Indonesia" Value="id" />
+        <asp:ListItem Text="日本語" Value="ja" />
+        <asp:ListItem Text="한국어" Value="ko" />
+        <asp:ListItem Text="中国語" Value="zh-cn" />
+    </asp:DropDownList>
+    <hr />
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

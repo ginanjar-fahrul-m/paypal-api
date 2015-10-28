@@ -1,23 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PayPalApi.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PayPalApi.Default" MasterPageFile="~/MasterPage.Master"%>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta name="viewport" content="width=device-width" />
+<asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <title>TEST PAYPAL</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
-    <div class="container">
-        <asp:DropDownList ID="ddlLanguages" runat="server" AutoPostBack="true">
-            <asp:ListItem Text="English" Value="en-us" />
-            <asp:ListItem Text="Bahasa Indonesia" Value="id" />
-            <asp:ListItem Text="日本語" Value="ja" />
-            <asp:ListItem Text="한국어" Value="ko" />
-            <asp:ListItem Text="中国語" Value="zh-cn" />
-        </asp:DropDownList>
-        <hr />
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="container" runat="server">
         <div class="jumbotron">
             <h1 class="text-center">Test PayPal Refund</h1>
         </div>
@@ -95,17 +84,15 @@
                 <div class="tab-content">
                     <div class="active tab-pane fade in" id="paypal">
                         <br />
-                        <form id="form1" runat="server">
-                            <div>                           
-                                <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                                    <asp:ListItem Text=" $10" Value="10"></asp:ListItem>
-                                    <asp:ListItem Text=" $30" Value="30"></asp:ListItem>
-                                    <asp:ListItem Text=" $50" Value="50"></asp:ListItem>
-                                </asp:RadioButtonList>
-                                <br />
-                                <asp:Button CssClass="btn btn-primary" ID="Pay" runat="server" Text="Pay" OnClick="Pay_Click" />                
-                            </div>
-                        </form>
+                        <div>                           
+                            <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                                <asp:ListItem Text=" $10" Value="10"></asp:ListItem>
+                                <asp:ListItem Text=" $30" Value="30"></asp:ListItem>
+                                <asp:ListItem Text=" $50" Value="50"></asp:ListItem>
+                            </asp:RadioButtonList>
+                            <br />
+                            <asp:Button CssClass="btn btn-primary" ID="Pay" runat="server" Text="Pay" OnClick="Pay_Click" />                
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="cash">
                         <br />
@@ -117,7 +104,7 @@
             </div>
         </div>
     </div>
+    
     <script src="/Scripts/jquery-2.1.4.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
-</body>
-</html>
+</asp:Content>

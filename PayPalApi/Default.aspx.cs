@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace PayPalApi
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default : BasePage
     {
         //TODO save static variable to Session
         private static Dictionary<String, String> config = ConfigManager.Instance.GetProperties();
