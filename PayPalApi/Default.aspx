@@ -10,6 +10,14 @@
 </head>
 <body>
     <div class="container">
+        <asp:DropDownList ID="ddlLanguages" runat="server" AutoPostBack="true">
+            <asp:ListItem Text="English" Value="en-us" />
+            <asp:ListItem Text="Bahasa Indonesia" Value="id" />
+            <asp:ListItem Text="日本語" Value="ja" />
+            <asp:ListItem Text="한국어" Value="ko" />
+            <asp:ListItem Text="中国語" Value="zh-cn" />
+        </asp:DropDownList>
+        <hr />
         <div class="jumbotron">
             <h1 class="text-center">Test PayPal Refund</h1>
         </div>
