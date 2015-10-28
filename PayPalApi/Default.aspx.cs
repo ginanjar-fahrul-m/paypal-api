@@ -52,18 +52,17 @@ namespace PayPalApi
                     var itemList = new ItemList()
                     {
                         items = new List<Item>()
-                    {
-                        new Item()
-                        {
-                            name = "Item Name",
-                            currency = "USD",
-                            price = "10",
-                            quantity = "1",
-                            sku = "sku"
-                        }
-                    }
+						{
+							new Item()
+							{
+								name = "Item Name",
+								currency = "USD",
+								price = "10",
+								quantity = "1",
+								sku = "sku"
+							}
+						}
                     };
-
 
                     var payer = new Payer()
                     {

@@ -67,21 +67,49 @@
                             </div>
                         </div>
                     </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a href="History.aspx">Transaction History</a>
+                            </h4>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-xs-9 col-md-9">
+                <% if (!string.IsNullOrEmpty(this.message))
+                    { %>
+                <div class="alert alert-success">
+                  <strong>Success!</strong> <%= this.message %>
+                </div>
+                <%      this.message = null;
+                    } %>
+                <% if (string.IsNullOrEmpty(this.paymentid))
+                    { %>
                 <h3 class="text-center">Transaction</h3>
                 <br />
                 <dl>
-                    <dt>First transaction</dt>
-                    <dd><a class="btn btn-warning" href="#" role="button">Refund</a></dd>
+                    <% 
+                        var payments = this.history.GetEnumerator();
+                        while (payments.MoveNext())
+                        {
+                            var transactions = payments.Current.transactions.GetEnumerator();
+                            
+                            while (transactions.MoveNext())
+                            {
+                                var desc = transactions.Current.description;
+                                var amount = transactions.Current.amount.currency + " " + transactions.Current.amount.total;
+                                var invoice = transactions.Current.invoice_number;
+                    %>
+                    <dt><%= "Invoice number: " + invoice + " " + desc + "(" + amount + ")" %></dt>
+                    <dd><a class="btn btn-warning" href="History.aspx?paymentid=<%= payments.Current.id %>" role="button">Refund</a></dd>
                     <br />
-                    <dt>Second transaction</dt>
-                    <dd><a class="btn btn-warning" href="#" role="button">Refund</a></dd>
-                    <br />
-                    <dt>Third transaction</dt>
-                    <dd><a class="btn btn-warning" href="#" role="button">Refund</a></dd>
+                    <% 
+                            }
+                        }
+                    %>
                 </dl>
+                <% } %>
             </div>
         </div>
     </div>
