@@ -110,9 +110,9 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Resources.zh-cn.designer.cs</LastGenOutput>
     </Content>
-    <EmbeddedResource Include="App_GlobalResources\Resources.en-us.resx">
+    <EmbeddedResource Include="App_GlobalResources\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.en-us.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Content Include="App_GlobalResources\Resources.id.resx">
@@ -165,10 +165,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.zh-cn.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Resources.en-us.Designer.cs">
+    <Compile Include="App_GlobalResources\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.en-us.resx</DependentUpon>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Resources.id.designer.cs">
       <AutoGen>True</AutoGen>

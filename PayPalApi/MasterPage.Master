@@ -10,18 +10,20 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <asp:DropDownList ID="ddlLanguages" runat="server" AutoPostBack="true">
-        <asp:ListItem Text="English" Value="en-us" />
-        <asp:ListItem Text="Bahasa Indonesia" Value="id" />
-        <asp:ListItem Text="日本語" Value="ja" />
-        <asp:ListItem Text="한국어" Value="ko" />
-        <asp:ListItem Text="中国語" Value="zh-cn" />
-    </asp:DropDownList>
-    <hr />
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    <div class="container" runat="server">
+        <form id="form1" runat="server">
+        <asp:DropDownList ID="ddlLanguages" runat="server" AutoPostBack="true">
+            <asp:ListItem Text="English" Value="en-us" />
+            <asp:ListItem Text="Bahasa Indonesia" Value="id" />
+            <asp:ListItem Text="日本語" Value="ja" />
+            <asp:ListItem Text="한국어" Value="ko" />
+            <asp:ListItem Text="中国語" Value="zh-cn" />
+        </asp:DropDownList>
+        <hr />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
-    </asp:ContentPlaceHolder>
-    </form>
+        </asp:ContentPlaceHolder>
+        </form>
+    </div>
 </body>
 </html>
