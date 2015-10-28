@@ -2,7 +2,6 @@
 
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
-    <title>TEST PAYPAL</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -16,15 +15,15 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#collapse" href="#collapse-one">
-                                Product's Category
+                                <%= GetGlobalResourceObject("Resources","mnCategory") %>
                             </a>
                         </h4>
                     </div>
                     <div id="collapse-one" class="panel-collapse collapse">
                         <div class="panel-body">
                             <ul>
-                                <li><a href="#">English to Japan</a></li>
-                                <li><a href="#">Japan to English</a></li>
+                                <li><a href="#"><%= GetGlobalResourceObject("Resources","catEngToJpn") %></a></li>
+                                <li><a href="#"><%= GetGlobalResourceObject("Resources","catJpnToEng") %></a></li>
                             </ul>
                         </div>
                     </div>
@@ -33,16 +32,16 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#collapse" href="#collapse-two">
-                                FAQs
+                                <%= GetGlobalResourceObject("Resources","mnFaq") %>
                             </a>
                         </h4>
                     </div>
                     <div id="collapse-two" class="panel-collapse collapse">
                         <div class="panel-body">
                             <ul>
-                                <li><a href="#">Lowest Price</a></li>
-                                <li><a href="#">Cancellation Policy</a></li>
-                                <li><a href="#">Payment</a></li>
+                                <li><a href="#"><%= GetGlobalResourceObject("Resources","txt1") %></a></li>
+                                <li><a href="#"><%= GetGlobalResourceObject("Resources","txt2") %></a></li>
+                                <li><a href="#"><%= GetGlobalResourceObject("Resources","txt3") %></a></li>
                             </ul>
                         </div>
                     </div>
@@ -51,33 +50,33 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#collapse" href="#collapse-three">
-                                Contact Us
+                                <%= GetGlobalResourceObject("Resources","mnContact") %>
                             </a>
                         </h4>
                     </div>
                     <div id="collapse-three" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Tokyo head office Second Mori Building 4F, Hamamatsucho 2-1-3, Minato-ku, Tokyo 105-0013
-                            <br />Tel: 81-3-5733-4264
-                            <br />Fax: 81-3-3433-3320
+                            <%= GetGlobalResourceObject("Resources","mnCompany") %>
+                            <br /><%= GetGlobalResourceObject("Resources","txtTel") %>
+                            <br /><%= GetGlobalResourceObject("Resources","txtFax") %>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a href="History.aspx">Transaction History</a>
+                            <a href="History.aspx"><%= GetGlobalResourceObject("Resources","mnTrans") %></a>
                         </h4>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-xs-9 col-md-9">
-            <h3 class="text-center">Payment Method</h3>
+            <h3 class="text-center"><%= GetGlobalResourceObject("Resources","headerMethod") %></h3>
             <!-- Tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li class="active"><a href="#paypal" role="tab" data-toggle="tab">PayPal</a></li>
-                <li><a href="#cash" role="tab" data-toggle="tab">Cash</a></li>
+                <li class="active"><a href="#paypal" role="tab" data-toggle="tab"><%= GetGlobalResourceObject("Resources","tabPaypal") %></a></li>
+                <li><a href="#cash" role="tab" data-toggle="tab"><%= GetGlobalResourceObject("Resources","tabCash") %></a></li>
             </ul>
             <!-- Tab Content -->
             <div class="tab-content">
@@ -96,7 +95,7 @@
                 <div class="tab-pane fade" id="cash">
                     <br />
                     <div>
-                        Sorry, We are not accept cash for now.
+                        <%= GetGlobalResourceObject("Resources","msg1") %>
                     </div>
                 </div>
             </div>
